@@ -24,9 +24,19 @@ public class HammingCode2Info {
         System.out.print("Please input your parity mode(Odd as 1, Even as 2): ");
 
         //Scanner tempScanner = new Scanner(System.in);
-        int tempIn = stdin.nextInt();
+        int choice = 0;
+        Boolean selected = false;
+        while(!selected){
+            int num = stdin.nextInt();
+            if(num == 1 || num == 2){
+                choice = num;
+                selected = true;
+            }else{
+                System.out.printf("Invalid selection.\nPlease input your parity mode(Odd as 1, Even as 2): ");
+            }
+        }
 
-        if (tempIn == 1) {
+        if (choice == 1) {
             parityModeOdd = true;
         } else {
             parityModeOdd = false;

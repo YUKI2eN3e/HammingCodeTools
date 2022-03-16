@@ -17,7 +17,17 @@ public class HammingCodeTools {
                 + "Your choice: ");
 
         Scanner stdin = new Scanner(System.in);
-        int choice = stdin.nextInt();
+        int choice = 0;
+        Boolean selected = false;
+        while(!selected){
+            int num = stdin.nextInt();
+            if(num == 1 || num == 2){
+                choice = num;
+                selected = true;
+            }else{
+                System.out.printf("Invalid selection.\nYour choice: ");
+            }
+        } 
 
         System.out.println();
 

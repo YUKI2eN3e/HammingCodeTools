@@ -33,9 +33,19 @@ public class Info2HammingCode {
         System.out.print("Please input your parity mode(Odd as 1, Even as 2): ");
 
         //Scanner tempScanner = new Scanner(System.in);
-        int tempIn = stdin.nextInt();
+        int choice = 0;
+        Boolean selected = false;
+        while(!selected){
+            int num = stdin.nextInt();
+            if(num == 1 || num == 2){
+                choice = num;
+                selected = true;
+            }else{
+                System.out.printf("Invalid selection.\nPlease input your parity mode(Odd as 1, Even as 2): ");
+            }
+        }
 
-        parityModeOdd = tempIn == 1;
+        parityModeOdd = choice == 1;
     }
 
 
