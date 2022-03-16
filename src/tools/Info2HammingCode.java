@@ -14,8 +14,6 @@ public class Info2HammingCode {
     public Info2HammingCode(Scanner stdin) {
         System.out.print("Please input your original binary number: ");
 
-        //Scanner tempScanner = new Scanner(System.in);
-
         dataBin = stdin.next();
     }
 
@@ -32,7 +30,6 @@ public class Info2HammingCode {
     public void setParityMode(Scanner stdin) {
         System.out.print("Please input your parity mode(Odd as 1, Even as 2): ");
 
-        //Scanner tempScanner = new Scanner(System.in);
         int choice = 0;
         Boolean selected = false;
         while(!selected){

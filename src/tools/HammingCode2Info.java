@@ -15,15 +15,12 @@ public class HammingCode2Info {
     public HammingCode2Info(Scanner stdin) {
         System.out.print("Please input your Hamming Code: ");
 
-        //Scanner tempScanner = new Scanner(System.in);
-
         hammingCode = stdin.next();
     }
 
     public void setParityMode(Scanner stdin) {
         System.out.print("Please input your parity mode(Odd as 1, Even as 2): ");
 
-        //Scanner tempScanner = new Scanner(System.in);
         int choice = 0;
         Boolean selected = false;
         while(!selected){
@@ -52,9 +49,8 @@ public class HammingCode2Info {
     }
 
     public void outputOriInfo() {
-        //int finalOriInfo = 0;
         String finalOriInfo = new String();
-        int j = 1;//, bits = hammingCodeCorrect.length() - k;
+        int j = 1;
 
         for (int i = 0; i < hammingCodeCorrect.length(); i++) {
             if (j <= k) {
@@ -64,13 +60,7 @@ public class HammingCode2Info {
                 }
             }
 
-            /**
-            finalOriInfo +=
-                    Integer.parseInt(String.valueOf(hammingCodeCorrect.charAt(i)))
-                            * (int) pow(2, bits - 1);
-            **/
             finalOriInfo += hammingCodeCorrect.charAt(i);
-            //bits--;
         }
 
         System.out.println("The Original Info is: " + finalOriInfo);

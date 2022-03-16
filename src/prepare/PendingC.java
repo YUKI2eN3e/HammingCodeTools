@@ -1,7 +1,5 @@
 package prepare;
 
-//import java.lang.*;
-
 public class PendingC {
     private boolean[][] map = new boolean[10][55];
 
