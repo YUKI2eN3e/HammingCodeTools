@@ -11,12 +11,12 @@ public class Info2HammingCode {
     private boolean parityModeOdd;
     private int k;
 
-    public Info2HammingCode() {
+    public Info2HammingCode(Scanner stdin) {
         System.out.print("Please input your original binary number: ");
 
-        Scanner tempScanner = new Scanner(System.in);
+        //Scanner tempScanner = new Scanner(System.in);
 
-        dataBin = tempScanner.next();
+        dataBin = stdin.next();
     }
 
     public void findK() {
@@ -29,11 +29,11 @@ public class Info2HammingCode {
         this.k = k;
     }
 
-    public void setParityMode() {
+    public void setParityMode(Scanner stdin) {
         System.out.print("Please input your parity mode(Odd as 1, Even as 2): ");
 
-        Scanner tempScanner = new Scanner(System.in);
-        int tempIn = tempScanner.nextInt();
+        //Scanner tempScanner = new Scanner(System.in);
+        int tempIn = stdin.nextInt();
 
         parityModeOdd = tempIn == 1;
     }

@@ -16,28 +16,30 @@ public class HammingCodeTools {
                 + "----------------------------\n"
                 + "Your choice: ");
 
-        Scanner tempScanner = new Scanner(System.in);
-        int choice = tempScanner.nextInt();
+        Scanner stdin = new Scanner(System.in);
+        int choice = stdin.nextInt();
 
         System.out.println();
 
         if (choice == 1) {
-            info2HammingCode();
+            info2HammingCode(stdin);
         } else {
-            hammingCode2Info();
+            hammingCode2Info(stdin);
         }
+
+        stdin.close();
     }
 
-    public static void info2HammingCode() {
-        Info2HammingCode fin = new Info2HammingCode();
-        fin.setParityMode();
+    public static void info2HammingCode(Scanner stdin) {
+        Info2HammingCode fin = new Info2HammingCode(stdin);
+        fin.setParityMode(stdin);
         fin.findK();
         fin.createHammingCode();
     }
 
-    public static void hammingCode2Info() {
-        HammingCode2Info fin = new HammingCode2Info();
-        fin.setParityMode();
+    public static void hammingCode2Info(Scanner stdin) {
+        HammingCode2Info fin = new HammingCode2Info(stdin);
+        fin.setParityMode(stdin);
         fin.findK();
         fin.convertHammingCode2Info();
         fin.outputOriInfo();

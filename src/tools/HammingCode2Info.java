@@ -12,19 +12,19 @@ public class HammingCode2Info {
     private boolean parityModeOdd;
     private int k;
 
-    public HammingCode2Info() {
+    public HammingCode2Info(Scanner stdin) {
         System.out.print("Please input your Hamming Code: ");
 
-        Scanner tempScanner = new Scanner(System.in);
+        //Scanner tempScanner = new Scanner(System.in);
 
-        hammingCode = tempScanner.next();
+        hammingCode = stdin.next();
     }
 
-    public void setParityMode() {
+    public void setParityMode(Scanner stdin) {
         System.out.print("Please input your parity mode(Odd as 1, Even as 2): ");
 
-        Scanner tempScanner = new Scanner(System.in);
-        int tempIn = tempScanner.nextInt();
+        //Scanner tempScanner = new Scanner(System.in);
+        int tempIn = stdin.nextInt();
 
         if (tempIn == 1) {
             parityModeOdd = true;
@@ -42,8 +42,9 @@ public class HammingCode2Info {
     }
 
     public void outputOriInfo() {
-        int finalOriInfo = 0;
-        int j = 1, bits = hammingCodeCorrect.length() - k;
+        //int finalOriInfo = 0;
+        String finalOriInfo = new String();
+        int j = 1;//, bits = hammingCodeCorrect.length() - k;
 
         for (int i = 0; i < hammingCodeCorrect.length(); i++) {
             if (j <= k) {
@@ -53,12 +54,13 @@ public class HammingCode2Info {
                 }
             }
 
-
+            /**
             finalOriInfo +=
                     Integer.parseInt(String.valueOf(hammingCodeCorrect.charAt(i)))
                             * (int) pow(2, bits - 1);
-
-            bits--;
+            **/
+            finalOriInfo += hammingCodeCorrect.charAt(i);
+            //bits--;
         }
 
         System.out.println("The Original Info is: " + finalOriInfo);
